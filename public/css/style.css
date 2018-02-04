@@ -11,6 +11,11 @@ body {
 .edit-form {
   width: 50%;
 }
+
+.login-form {
+  width: 40%;
+}
+
 .thumbnail {
 /*   width: 60%;
   margin: 20px auto; */
