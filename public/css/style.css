@@ -1,0 +1,26 @@
+p {
+  font-size: 18px;
+}
+
+body {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 50px;;
+}
+
+.edit-form {
+  width: 50%;
+}
+.thumbnail {
+/*   width: 60%;
+  margin: 20px auto; */
+}
+
+.img-thumbnail {
+  margin: 0;
+}
+
+.blog-thumbnail {
+  width: 60%;
+  margin: 20px auto;
+}

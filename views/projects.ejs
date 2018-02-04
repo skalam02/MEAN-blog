@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+<h1><strong>Projects Page</strong></h1>
+<div class="container">
+<!-- <a href="/compsci/new">New Post</a> -->
+</div>
+<% projects.forEach(function(project) { %>
+  
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-4"></div>
+        <div class="thumbnail blog-thumbnail">
+          <h2><%= project.title %></h2>
+          <img class="img-thumbnail" src="<%= project.image %>" alt="">
+          <p><strong>Date:</strong> <%= project.created.toDateString() %></p>
+          <p><%= project.body.substring(0,100) %>...</p>
+           <a href="/compsci/<%= project._id %>">Read More</a>
+        </div>
+      </div>
+     </div>
+  </div>
+  
+<% }) %>
+
+<% include partials/footer %>
+
+

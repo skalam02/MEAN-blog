@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="container"> 
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <div class="thumbnail blog-thumbnail">
+        <h2><%= blog.title %></h2>
+        <img class="img-thumbnail" src="<%= blog.image %>" alt="">
+        <p><strong>Date:</strong> <%= blog.created.toDateString() %></p>
+        <p><%= blog.body %>...</p>
+       </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class='form-inline'>
+<form class="form-group" action="/compsci/<%= blog._id %>?_method=DELETE" method="POST">
+  <button>Delete</button>
+</form>
+
+<form class="form-group" action="/compsci/<%= blog._id %>/edit">
+  <button>Update</button>
+</form>
+</div> -->
+<% include partials/footer %>

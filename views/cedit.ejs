@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<h1>Update Computer Science Post</h1>
+
+<div class="container edit-form"> 
+<form action="/admin/compsci/<%= foundBlog._id %>?_method=PUT" method="POST">
+
+	<div class="form-group"> <!-- Title field -->
+		<label class="control-label " for="name">Title</label>
+		<input class="form-control" id="name" name="cblog[title]" type="text" value="<%= foundBlog.title %>"/>
+	</div>
+	
+	<div class="form-group"> <!-- Image field -->
+		<label class="control-label requiredField" for="image">Image</label>
+		<input class="form-control" id="image" name="cblog[image]" type="text" value="<%= foundBlog.image %>"/>
+	</div>
+	
+	<div class="form-group"> <!-- Body field -->
+		<label class="control-label " for="body">Body</label>
+		<textarea class="form-control" cols="40" id="body" name="cblog[body]" rows="10"><%= foundBlog.body %></textarea>
+	</div>
+	
+	<div class="form-group">
+		<button class="btn btn-primary " name="submit" type="submit">Update</button>
+	</div>
+	
+</form>		
+</div>
+<% include partials/footer %>
