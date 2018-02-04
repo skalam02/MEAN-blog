@@ -1,3 +1,10 @@
+var env = process.env.NODE_ENV || 'development';
+
+if (env === 'development') {
+  process.env.PORT = 3000;
+  process.env.MONGODB_URI = 'mongodb://localhost/my_blog'
+} 
+
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
@@ -26,7 +33,7 @@ app.use(require('express-session')({
 app.use(passport.initialize())
 app.use(passport.session())
 
-mongoose.connect('mongodb://localhost/my_blog')
+mongoose.connect(process.env.MONGODB_URI)
 
 //User Schema
 var userSchema = new mongoose.Schema({
@@ -40,16 +47,6 @@ var User = mongoose.model("User", userSchema)
 passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
-
-// User.register(new User({username: "admin"}),"AdminPassword", function(err, user) {
-//   if(err) {
-//     console.log(err) 
-//   } else {
-//     console.log('Created User!')
-//     console.log(user)
-  
-//   }
-// })
 
 //Index Routes
 app.get('/', function(req,res) {
