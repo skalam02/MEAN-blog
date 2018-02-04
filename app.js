@@ -48,6 +48,12 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+User.register(new User({username: 'stylianos'}), 'MySecretBlogPassword123@', function(err, user) {
+  if (err) {
+    console.log(err)
+  } 
+})
+
 //Index Routes
 app.get('/', function(req,res) {
   res.render("home")
