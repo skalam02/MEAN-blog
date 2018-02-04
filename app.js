@@ -7,6 +7,11 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local')
 var passportLocalMongoose = require('passport-local-mongoose')
 
+var {cBlog} = require('./models/cBlog') 
+var {sBlog} = require('./models/sBlog') 
+var {proj} = require('./models/proj') 
+
+
 var PORT = process.env.PORT || 3000
 
 app.set('view engine', "ejs")
@@ -45,33 +50,6 @@ passport.deserializeUser(User.deserializeUser())
   
 //   }
 // })
-
-//Blog Schemas
-var cblogSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  created: {type: Date , default: Date.now}
-})
-
-var sblogSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  created: {type: Date , default: Date.now}
-})
-
-var projectSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  created: {type: Date , default: Date.now}
-})
-
-//Mongoose Blog Models
-var cBlog = mongoose.model("cBlog", cblogSchema)
-var sBlog = mongoose.model("sBlog", sblogSchema)
-var proj = mongoose.model("proj", projectSchema)
 
 //Index Routes
 app.get('/', function(req,res) {
