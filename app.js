@@ -12,11 +12,12 @@ var mongoose = require('mongoose')
 var methodOverride = require('method-override')
 var passport = require('passport')
 var LocalStrategy = require('passport-local')
-var passportLocalMongoose = require('passport-local-mongoose')
+// var passportLocalMongoose = require('passport-local-mongoose')
 
 var {cBlog} = require('./models/cBlog') 
 var {sBlog} = require('./models/sBlog') 
-var {proj} = require('./models/proj') 
+var {proj} = require('./models/proj')
+var User = require('./models/User')
 
 
 var PORT = process.env.PORT || 3000
@@ -36,13 +37,13 @@ app.use(passport.session())
 mongoose.connect(process.env.MONGODB_URI)
 
 //User Schema
-var userSchema = new mongoose.Schema({
-  username: String,
-  password: String
-})
+// var userSchema = new mongoose.Schema({
+//   username: String,
+//   password: String
+// })
 
-userSchema.plugin(passportLocalMongoose)
-var User = mongoose.model("User", userSchema)
+// userSchema.plugin(passportLocalMongoose)
+// var User = mongoose.model("User", userSchema)
 
 passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
