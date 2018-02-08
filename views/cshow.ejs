@@ -7,7 +7,7 @@
         <h2><%= blog.title %></h2>
         <img class="img-thumbnail" src="<%= blog.image %>" alt="">
         <p><strong>Date:</strong> <%= blog.created.toDateString() %></p>
-        <p><%= blog.body %>...</p>
+        <p><%- blog.body %></p>
        </div>
     </div>
   </div>

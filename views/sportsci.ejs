@@ -13,7 +13,7 @@
           <h2><%= blog.title %></h2>
           <img class="img-thumbnail" src="<%= blog.image %>" alt="">
           <p><strong>Date:</strong> <%= blog.created.toDateString() %></p>
-          <p><%= blog.body.substring(0,100) %>...</p>
+          <p><%- blog.body.substring(0,100) %>...</p>
            <a href="/sportsci/<%= blog._id %>">Read More</a>
          </div>
       </div>
