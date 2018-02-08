@@ -190,7 +190,7 @@ app.get('/admin/sportsci/:id',isLoggedIn, function(req,res) {
 
 
 app.post('/admin/compsci',isLoggedIn, function(req,res) {
-  req.body.cblog.body = req.sanitize(req.body.cblog.body)
+//   req.body.cblog.body = req.sanitize(req.body.cblog.body)
   cBlog.create(req.body.cblog, function(err, blog) {
     if(err) {
       console.log(err)
@@ -202,7 +202,7 @@ app.post('/admin/compsci',isLoggedIn, function(req,res) {
 })
 
 app.post('/admin/sportsci', isLoggedIn, function(req,res) {
-  req.body.sblog.body = req.sanitize(req.body.sblog.body)
+//   req.body.sblog.body = req.sanitize(req.body.sblog.body)
   sBlog.create(req.body.sblog, function(err, blog) {
     if(err) {
       console.log(err)
@@ -236,7 +236,7 @@ app.get('/admin/sportsci/:id/edit',isLoggedIn, function(req,res) {
 })
 
 app.put('/admin/compsci/:id',isLoggedIn, function(req,res) {
-  req.body.cblog.body = req.sanitize(req.body.cblog.body)
+//   req.body.cblog.body = req.sanitize(req.body.cblog.body)
   cBlog.findByIdAndUpdate(req.params.id, req.body.cblog, function(err, updatedBlog) {
     if(err) {
       console.log(err)
@@ -249,7 +249,7 @@ app.put('/admin/compsci/:id',isLoggedIn, function(req,res) {
 })
 
 app.put('/admin/sportsci/:id',isLoggedIn, function(req,res) {
-  req.body.sblog.body = req.sanitize(req.body.sblog.body)
+//   req.body.sblog.body = req.sanitize(req.body.sblog.body)
   sBlog.findByIdAndUpdate(req.params.id, req.body.sblog, function(err, updatedBlog) {
     if(err) {
       console.log(err)
