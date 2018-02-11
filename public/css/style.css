@@ -1,3 +1,14 @@
+.left {
+  text-align: left;
+}
+
+.sixteen {
+  font-size: 20px;
+}
+p div {
+  text-align:left;
+}
+
 p {
   font-size: 18px;
 }
